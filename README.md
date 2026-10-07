@@ -46,6 +46,7 @@ FULL OUTER JOIN).
 | 6. Challenge Night Pt2 — JOINs Avançados | Auditoria com CTE, RIGHT JOIN, simulação de FULL OUTER JOIN com UNION, CTEs encadeadas com window function | `noitada_desafios_vol2.sql` |
 | 7. Between + Exists + In (Missões da Noite) | COALESCE, BETWEEN, IN, LIKE, EXISTS / NOT EXISTS | Não há um arquivo dedicado só com essas 20 missões; `BETWEEN`, `NOT EXISTS` e `CROSS JOIN` acabaram sendo exercitados dentro dos KPIs extras do desafio final (item 8) |
 | 8. Desafio Final do Bimestre — SportZone | Relatório gerencial completo (clientes, produtos, vendedores) + 10 KPIs obrigatórios + 5 KPIs próprios | `DDL_desafio_final.sql` (schema + dados), `desafio_final_sportzone.sql` (consultas), `Relatorio_SportZone_Desafio_Final.docx` (resultados e interpretação) |
+| 9. SQL Quest — O Ataque ao Reino dos Dados | Recuperação em 7 etapas encadeadas de uma base de jogadores: UPDATE com CASE, COALESCE, subquery com AVG, GROUP BY + HAVING dentro de subquery, UPDATE com ORDER BY/LIMIT, SELECT de conferência antes de UPDATE/DELETE | `DDL_sql_quest.sql` (schema + dados fornecidos), `sql_quest_reino_dos_dados.sql` (etapas + auditoria final) |
 
 `guia_de_estudos_sql.sql` não é um exercício da disciplina — é um
 resumo próprio, com uma base de dados reduzida, cobrindo cada
@@ -110,6 +111,6 @@ mysql -u usuario -p nome_do_banco < guia_de_estudos_sql.sql
 ```
 
 Os demais arquivos criam o próprio banco (`db_2_bim`,
-`db_aula_innerjoin` ou `sportzone`, conforme o `CREATE DATABASE`/`USE`
+`db_aula_innerjoin`, `sportzone` ou `sql_quest`, conforme o `CREATE DATABASE`/`USE`
 no topo de cada arquivo) — rode o script de schema e dados de cada
 módulo antes do script de consultas correspondente.
