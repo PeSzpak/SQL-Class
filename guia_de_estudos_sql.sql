@@ -5,8 +5,8 @@
 -- ao avançado, organizado em ordem crescente de dificuldade.
 --
 -- A base usada aqui é uma versão reduzida do cenário TechVendas
--- S/A utilizado nos exercícios do curso (arquivos "innerjoin 1.sql",
--- "aula 03.sql", "dashboard_executivo_techvendas.sql",
+-- S/A utilizado nos exercícios do curso (arquivos "lista_inner_join.sql",
+-- "exercicios_left_join.sql", "dashboard_executivo_techvendas.sql",
 -- "noitada_desafios_vol2.sql" e "desafio_final_sportzone.sql"). Os
 -- dados foram simplificados para caber em poucas linhas e ainda
 -- assim demonstrar todos os casos importantes: clientes sem
