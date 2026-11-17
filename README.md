@@ -69,6 +69,7 @@ SQL_class/
 | `09-views-techmarket/` | Views — TechMarket (14/10) | 4 VIEWS (vendas detalhadas, vendedores, produtos, clientes), painel executivo combinando VIEWS, atualização da view de vendedores com desconto total, questões técnicas e parecer gerencial | `DDL_techmarket.sql` (schema + dados fornecidos), `views_techmarket.sql` (views, relatórios e respostas) |
 | `10-sql-murder-mystery/` | Desafio da Noite — SQL Murder Mystery (14/11) | Investigação no banco do jogo (SQLite) com WHERE, LIKE, INNER/LEFT JOIN, subconsulta, GROUP BY + HAVING; assassino e mandante confirmados pelo próprio jogo | `sql_murder_mystery.sql` (consultas, evidências e conclusão) |
 | Repositório [spotify-dashboard-looker](https://github.com/PeSzpak/spotify-dashboard-looker) | Datathon (21/10) | Dashboard no Looker Studio com 15 KPIs sobre o Top 50 do Spotify | Projeto próprio, com SQL, scripts e prints |
+| Repositório [arquitetura-medalhao-mysql](https://github.com/PeSzpak/arquitetura-medalhao-mysql) | Hands-on Medalhão (11/11) | Stored Procedures Bronze → Silver → Gold com transação, tabela temporária e reexecução sem duplicar; README com data lake, swamp, warehouse e lakehouse | Projeto próprio |
 
 `guia_de_estudos_sql.sql` não é um exercício da disciplina — é um
 resumo próprio, com uma base de dados reduzida, cobrindo cada
