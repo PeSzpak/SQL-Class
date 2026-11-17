@@ -48,7 +48,9 @@ SQL_class/
 ├── 05-dashboard-executivo/       Challenge Night: 15 KPIs
 ├── 06-joins-avancados/           Challenge Night Pt2: RIGHT/FULL JOIN, window functions
 ├── 07-desafio-final-sportzone/   desafio final do bimestre + relatório
-└── 08-sql-quest/                 SQL Quest: recuperação da base de jogadores
+├── 08-sql-quest/                 SQL Quest: recuperação da base de jogadores
+├── 09-views-techmarket/          VIEWS: camada de consultas reutilizáveis da TechMarket
+└── 10-sql-murder-mystery/        SQL Murder Mystery: investigação com JOIN e subconsulta
 ```
 
 ## Módulos do curso
@@ -64,6 +66,9 @@ SQL_class/
 | — | Between + Exists + In (Missões da Noite) | COALESCE, BETWEEN, IN, LIKE, EXISTS / NOT EXISTS | Não há um arquivo dedicado só com essas 20 missões; `BETWEEN`, `NOT EXISTS` e `CROSS JOIN` acabaram sendo exercitados dentro dos KPIs extras do desafio final (`07-desafio-final-sportzone/`) |
 | `07-desafio-final-sportzone/` | Desafio Final do Bimestre — SportZone | Relatório gerencial completo (clientes, produtos, vendedores) + 10 KPIs obrigatórios + 5 KPIs próprios | `DDL_desafio_final.sql` (schema + dados), `desafio_final_sportzone.sql` (consultas), `Relatorio_SportZone_Desafio_Final.docx` (resultados e interpretação) |
 | `08-sql-quest/` | SQL Quest — O Ataque ao Reino dos Dados | Recuperação em 7 etapas encadeadas de uma base de jogadores: UPDATE com CASE, COALESCE, subquery com AVG, GROUP BY + HAVING dentro de subquery, UPDATE com ORDER BY/LIMIT, SELECT de conferência antes de UPDATE/DELETE | `DDL_sql_quest.sql` (schema + dados fornecidos), `sql_quest_reino_dos_dados.sql` (etapas + auditoria final) |
+| `09-views-techmarket/` | Views — TechMarket (14/10) | 4 VIEWS (vendas detalhadas, vendedores, produtos, clientes), painel executivo combinando VIEWS, atualização da view de vendedores com desconto total, questões técnicas e parecer gerencial | `DDL_techmarket.sql` (schema + dados fornecidos), `views_techmarket.sql` (views, relatórios e respostas) |
+| `10-sql-murder-mystery/` | Desafio da Noite — SQL Murder Mystery (14/11) | Investigação no banco do jogo (SQLite) com WHERE, LIKE, INNER/LEFT JOIN, subconsulta, GROUP BY + HAVING; assassino e mandante confirmados pelo próprio jogo | `sql_murder_mystery.sql` (consultas, evidências e conclusão) |
+| Repositório [spotify-dashboard-looker](https://github.com/PeSzpak/spotify-dashboard-looker) | Datathon (21/10) | Dashboard no Looker Studio com 15 KPIs sobre o Top 50 do Spotify | Projeto próprio, com SQL, scripts e prints |
 
 `guia_de_estudos_sql.sql` não é um exercício da disciplina — é um
 resumo próprio, com uma base de dados reduzida, cobrindo cada
