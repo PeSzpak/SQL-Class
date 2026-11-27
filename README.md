@@ -1,6 +1,7 @@
 # SQL Class
 
-Repositório de estudos da disciplina de Banco de Dados II. Reúne os
+Repositório de estudos da disciplina de Banco de Dados II (ADS,
+Senac PR). Reúne os
 exercícios resolvidos, os desafios em grupo e um guia de estudos que
 resume, em ordem crescente de dificuldade, tudo que foi praticado ao
 longo do curso.
@@ -17,6 +18,49 @@ principais:
 - `produtos` — id_produto, nome_produto, categoria, marca, preco
 - `vendas` — id_venda, data_venda, id_cliente, id_vendedor, forma_pagamento, status, valor_total
 - `itens_venda` — id_item, id_venda, id_produto, quantidade, valor_unitario, desconto
+
+```mermaid
+erDiagram
+  clientes ||--o{ vendas : faz
+  vendedores ||--o{ vendas : registra
+  vendas ||--|{ itens_venda : contem
+  produtos ||--o{ itens_venda : aparece_em
+  clientes {
+    int id_cliente PK
+    varchar nome_cliente
+    varchar cidade
+    char estado
+  }
+  vendedores {
+    int id_vendedor PK
+    varchar nome_vendedor
+    varchar setor
+  }
+  produtos {
+    int id_produto PK
+    varchar nome_produto
+    varchar categoria
+    varchar marca
+    decimal preco
+  }
+  vendas {
+    int id_venda PK
+    date data_venda
+    int id_cliente FK
+    int id_vendedor FK
+    varchar forma_pagamento
+    varchar status
+    decimal valor_total
+  }
+  itens_venda {
+    int id_item PK
+    int id_venda FK
+    int id_produto FK
+    int quantidade
+    decimal valor_unitario
+    decimal desconto
+  }
+```
 
 O desafio final do bimestre troca de cenário para a **SportZone**,
 uma loja de artigos esportivos, com uma estrutura parecida (clientes,
@@ -141,4 +185,43 @@ módulo antes do script de consultas correspondente. Exemplo:
 ```bash
 mysql -u usuario -p < 07-desafio-final-sportzone/DDL_desafio_final.sql
 mysql -u usuario -p < 07-desafio-final-sportzone/desafio_final_sportzone.sql
+```
+
+Sem MySQL instalado, um container descartável resolve:
+
+```bash
+docker run -d --name sql-class -e MYSQL_ROOT_PASSWORD=senha -e MYSQL_DATABASE=estudos mysql:8.4
+# espere uns 20 s até o servidor subir
+docker exec -i sql-class mysql -uroot -psenha < 07-desafio-final-sportzone/DDL_desafio_final.sql
+docker exec -i sql-class mysql -uroot -psenha -t sportzone < 07-desafio-final-sportzone/desafio_final_sportzone.sql
+docker rm -f sql-class   # quando terminar
+```
+
+Ordem de execução de cada módulo (testada num MySQL 8.4 limpo):
+
+| Módulo | Rode antes | Depois |
+|---|---|---|
+| 03, 04, 05 (TechVendas) | `03-inner-join/lista_inner_join.sql` | `exercicios_inner_join_respondido.sql`, `04-left-join/exercicios_left_join_respondido.sql`, `05-dashboard-executivo/dashboard_executivo_techvendas.sql` |
+| 06 | `03-inner-join/lista_inner_join.sql` (usa o banco `db_aula_innerjoin` e cria tabelas extras) | `06-joins-avancados/noitada_desafios_vol2.sql` |
+| 07 SportZone | `DDL_desafio_final.sql` | `desafio_final_sportzone.sql` |
+| 08 SQL Quest | `DDL_sql_quest.sql` | `sql_quest_reino_dos_dados.sql` |
+| 09 TechMarket | `DDL_techmarket.sql` | `views_techmarket.sql` |
+| Guia | qualquer banco vazio (`estudos`) | `guia_de_estudos_sql.sql` |
+
+`01-warming-up/` e `02-cte/` usam a tabela `vendas` do banco da aula
+(com `status_venda`), que não está neste repositório, então não rodam
+sozinhos. `03-inner-join/exercicios_inner_join.sql` usa o banco
+`db_2_bim`, que precisa existir antes (`CREATE DATABASE db_2_bim;`).
+`10-sql-murder-mystery/` roda no banco SQLite do próprio jogo
+([SQL Murder Mystery](https://mystery.knightlab.com/)).
+
+Exemplo de saída, KPI 11 da SportZone (concentração de faturamento nos
+3 maiores clientes):
+
+```
++------------------+----------------------------+-----------------+
+| faturamento_top3 | faturamento_total_clientes | percentual_top3 |
++------------------+----------------------------+-----------------+
+|         13916.10 |                   27777.20 |           50.10 |
++------------------+----------------------------+-----------------+
 ```
